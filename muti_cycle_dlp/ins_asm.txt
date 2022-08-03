@@ -1,0 +1,320 @@
+
+MOV 		r1 ,$0,$1
+MOV			r2 ,$32,$1
+MOV 		r3 ,$16,$1
+MOV			r4 ,$64,$1
+
+
+//////////////part  uper 0
+Vload 	vr0, r1 , $0					
+Vload 	vr1, r1 , $1
+Vload 	vr5, r3 , $0
+Vload 	vr2, r1 , $2
+Vload		vr4, r2 , $0
+Vload 	vr3, r1 , $3
+VMAC 		vr7, vr5, / 	, $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $1
+NOP $0
+Vstore 	$0 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $2
+NOP $0
+Vstore 	$1 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $3
+NOP $0
+Vstore 	$2 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $4
+NOP $0
+Vstore 	$3 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload 	vr0, r1 , $8
+Vload 	vr1, r1 , $9
+Vstore 	$4 , r4 , vr7
+
+
+
+
+//////////////part  uper 1
+Vload 	vr5, r4 , $0
+Vload 	vr2, r1 , $10
+Vload		vr4, r2 , $5
+Vload 	vr3, r1 , $11
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $1
+Vload		vr4, r2 , $6
+Vstore 	$0 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $2
+Vload		vr4, r2 , $7
+Vstore 	$1 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $3
+Vload		vr4, r2 , $8
+Vstore 	$2 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $4
+Vload		vr4, r2 , $9
+Vstore 	$3 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr0, r1 , $4
+Vload 	vr1, r1 , $5
+Vstore 	$4 , r4 , vr7
+
+
+
+
+//////////////part  lower 0
+Vload 	vr5, r3 , $1
+Vload 	vr2, r1 , $6
+Vload		vr4, r2 , $0
+Vload 	vr3, r1 , $7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $1
+NOP $0
+Vstore 	$5 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $2
+NOP $0
+Vstore 	$6 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $3
+NOP $0
+Vstore 	$7 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $4
+NOP $0
+Vstore 	$8 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload 	vr0, r1 , $12
+Vload 	vr1, r1 , $13
+Vstore 	$9 , r4 , vr7
+
+
+
+
+
+//////////////part  lower 1
+Vload 	vr5, r4 , $5
+Vload 	vr2, r1 , $14
+Vload		vr4, r2 , $5
+Vload 	vr3, r1 , $15
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $6
+Vload		vr4, r2 , $6
+Vstore 	$5 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $7
+Vload		vr4, r2 , $7
+Vstore 	$6 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $8
+Vload		vr4, r2 , $8
+Vstore 	$7 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $9
+Vload		vr4, r2 , $9
+Vstore 	$8 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+MOV 		r1 ,$20,$1
+MOV			r2 ,$64 ,$1
+Vstore 	$9 , r4 , vr7
+
+
+
+
+
+
+////layer 2
+MOV 		r3 , $28,	$1
+MOV			r4 , $80,	$1
+//////////////part  uper 0
+Vload 	vr0, r1 , $0
+Vload 	vr1, r1 , $1
+Vload 	vr5, r3 , $0
+Vload 	vr2, r1 , $2
+Vload		vr4, r2 , $0
+Vload 	vr3, r1 , $3
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $1
+NOP $0
+Vstore 	$0 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $2
+NOP $0
+Vstore 	$1 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $3
+NOP $0
+Vstore 	$2 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload		vr4, r2 , $4
+NOP $0
+Vstore 	$3 , r4 , vr7
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $1111
+Vload 	vr0, r1 , $4
+Vload 	vr1, r1 , $5
+Vstore 	$4 , r4 , vr7
+
+
+
+
+//////////////part  uper 1
+Vload 	vr5, r4 , $0
+Vload 	vr2, r1 , $6
+Vload		vr4, r2 , $5
+Vload 	vr3, r1 , $7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $1
+Vload		vr4, r2 , $6
+Vstore 	$0 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $2
+Vload		vr4, r2 , $7
+Vstore 	$1 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $3
+Vload		vr4, r2 , $8
+Vstore 	$2 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+Vload 	vr5, r4 , $4
+Vload		vr4, r2 , $9
+Vstore 	$3 , r4 , vr7
+VMAC 		vr7, vr5, / , $1000
+VMAC 		/  , vr0, vr4 , $0000
+VMAC 		/  , vr1, vr4 , $0001
+VMAC 		/  , vr2, vr4 , $0010
+VMAC 		vr7, vr3, vr4 , $0111
+NOP $0
+NOP $0
+Vstore 	$4 , r4 , vr7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
